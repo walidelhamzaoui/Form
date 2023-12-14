@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    padding: 20px;
+
+  }
+  
+ 
+ .page {display: none;
+  
+  }
+  #Précédent{
+  color: blue;
+  background: transparent;
+  border: none;
+  font-size: 17px;
+  transition: 0.2s ease-out;
+  }
+  #Précédent:hover{
+  background-color: #2107e8;
+  color: white;
+  border-radius: 10px;
+  padding: 45px;
+  
+  }
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .radio-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    margin-bottom: 2.5em;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+    color: #020202;
+    padding-right: 20px;
+  }
+  
+  .radio-label:hover {
+    background-color: white;
+  }
+  
+  .radio-input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .radio-input:checked + .radio-label {
+    background-color:white;
+    border-color: rgb(247, 247, 250);
+  }
+  
+  .radio-input:focus + .radio-label {
+    outline: 2px solid rgba(0, 0, 255, 0.758);
+  }
+  
+  .radio-inner-circle {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgb(237, 239, 248);
+    border-radius: 50%;
+    margin-right: 0.5em;
+    transition: border-color 0.2s;
+    position: relative;
+  }
+  
+  .radio-label:hover .radio-inner-circle {
+    border-color: rgb(233, 233, 233);
+  }
+  
+  .radio-input:checked + .radio-label .radio-inner-circle {
+    border-color: #2107e8;
+  }
+  
+  .radio-input:checked + .radio-label .radio-inner-circle::after {
+    content: '';
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .active{
+
+  display: block;
+  }
+  input[type="text"]:focus{
+  
+  outline: none;
+  box-shadow: none;border: 2px solid blue;}
+  input[type="email"]:focus{
+  
+  outline: none;
+  box-shadow: none;border: 2px solid blue;}
+  input[type="telephone"]:focus{
+  
+  outline: none;
+  box-shadow: none;border: 2px solid blue;}
+  .select:focus{
+  outline: none;border: 2px solid blue; box-shadow: none;
+  }
+
+      

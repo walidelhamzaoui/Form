@@ -7,7 +7,7 @@ let prenom=document.getElementById('prenom');
 let prenom_error=document.getElementById('prenom_error');
 let nom_error=document.getElementById('nom_error');
 let email_error=document.getElementById('email_error');
-let Téléphone_error=document.getElementById('telephone_error');
+let phone_error=document.getElementById('telephone_error');
 let entreprise_error=document.getElementById('entreprise_error');
 let email=document.getElementById('E-mail');
 let Téléphone=document.getElementById('Téléphone');
@@ -38,7 +38,7 @@ if(btn.id === "Suivant"){
     btnP.style.display="block"
     if((index + 1)==2){
         if(prenom.value===""){
-        prenom_error.innerHTML="enter votre prenom"
+        prenom_error.innerHTML="Entrer votre Prenom"
         prenom_error.style.color="red";
         btnS.style.display="none"
         btnP.style.display="block"
@@ -49,28 +49,26 @@ if(btn.id === "Suivant"){
             btnS.style.display="block"
         }
         if(nom.value===""){
-        nom_error.innerHTML="enter votre nom"
+        nom_error.innerHTML="Entrer votre Nom"
         nom_error.style.color="red";
         btnS.style.display="none"
        
         // console.log("oki");
         
         }
-        if(email.value===""){
-        email_error.innerHTML="enter votre email"
-        email_error.style.color="red";
-        btnS.style.display="none"
-       
-        // console.log("oki");
-        
+          
+        if (email.value === "") {
+            email_error.innerHTML = "Entrer votre Email";
+            email_error.style.color = "red";
+            btnS.style.display = "none";
         }
-        if (Téléphone.value === "" || !/^(\([0-9]{3}\)|[0-9]{3}-)[0-9]{3}-[0-9]{4}$/) {
-            Téléphone_error.innerHTML = "Entrez un numéro valide";
-            Téléphone_error.style.color = "red";
+        if (Téléphone.value === ""  ) {
+            phone_error.innerHTML ="Enter your Telephone Number";
+            phone_error.style.color = "red";
             btnS.style.display = "none";
         }
         if(entreprise.value===""){
-            entreprise_error.innerHTML="enter votre entrese"
+            entreprise_error.innerHTML="Enter  Nom de votre Entreprise"
             entreprise_error.style.color="red";
         btnS.style.display="none"
        
@@ -147,22 +145,35 @@ function verifier() {
 
 function handele(){
 
-if(prenom.value!=="" && nom.value!==""&& email.value!==""&& Téléphone.value!==""&& entreprise.value!==""){
-    btnS.style.display="block";
-    prenom_error.innerHTML=""
-    nom_error.innerHTML=""
-    email_error.innerHTML=""
-    Téléphone_error.innerHTML=""
-    entreprise_error.innerHTML=""
+    if (
+        prenom.value !== "" &&
+        nom.value !== "" &&
+        email.value!==""&&
+        email.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) &&
+        Téléphone.value !== "" &&
+        Téléphone.value.match(/^0[5-9]{1}[0-9]{8}$/ ) &&
+        entreprise.value !== ""
+    ) {
+        prenom_error.innerHTML=""
+        nom_error.innerHTML=""
+        email_error.innerHTML=""
+        phone_error.innerHTML=""
+        entreprise_error.innerHTML=""
+        // prenom.innerHTML=""
+        // Your code when all conditions are met
+        btnS.style.display ="block"
+    }else{
+  
+        btnS.style.display ="none"
+    
+    }
+    
 
-}else{
-    btnS.style.display="none"
 
 }
 
 
-}
 
-
+    
 
 

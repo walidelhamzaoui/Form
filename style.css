@@ -115,14 +115,14 @@
   }
  .email{
     position: relative;
-   
+   /* padding-right: 10px; */
     
   }
   
   .icon {
     position: absolute;
     margin-top: 8px;
-    left: 86%;
+    left: 85%;
    
    /* left: 0px;
    right: 0; */

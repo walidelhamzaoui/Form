@@ -116,5 +116,22 @@
   .select:focus{
   outline: none;border: 2px solid blue; box-shadow: none;
   }
+ .email{
+    position: relative;
+   
+    
+  }
+  
+  .icon {
+    position: absolute;
+    margin-top: 8px;
+    left: 80%;
+   
+   /* left: 0px;
+   right: 0; */
+   /* margin-left: 280px;
+   margin-top: -35px; */
+  }
+  
 
       

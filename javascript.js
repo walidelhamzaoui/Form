@@ -42,8 +42,10 @@ if(numerique<5){}
     btnP.style.display="block"
     if((index + 1)==2){
         if(prenom.value===""){
-        prenom_error.innerHTML="Entrer votre Prenom"
+        prenom_error.innerHTML="Entrez votre prénom",
         prenom_error.style.color="red";
+        prenom_error.style.paddingTop="10px";
+        prenom_error.style.paddingLeft="5px";
         btnS.style.display="none"
         btnP.style.display="block"
        
@@ -53,7 +55,9 @@ if(numerique<5){}
             btnS.style.display="block"
         }
         if(nom.value===""){
-        nom_error.innerHTML="Entrer votre Nom"
+        nom_error.innerHTML="Entrez votre nom",
+        nom_error.style.paddingTop="10px";
+        nom_error.style.paddingLeft="5px";
         nom_error.style.color="red";
         btnS.style.display="none"
        
@@ -62,17 +66,23 @@ if(numerique<5){}
         }
           
         if (email.value === "") {
-            email_error.innerHTML = "Entrer votre Email";
+            email_error.innerHTML = "Entrez votre email",
+            email_error.style.paddingTop="10px";
+            email_error.style.paddingLeft="5px";
             email_error.style.color = "red";
             btnS.style.display = "none";
         }
         if (Téléphone.value === ""  ) {
-            phone_error.innerHTML ="Enter your Telephone Number";
+            phone_error.innerHTML ="Entrez votre numéro de téléphone",
+            phone_error.style.paddingTop="10px";
+            phone_error.style.paddingLeft="5px";
             phone_error.style.color = "red";
             btnS.style.display = "none";
         }
         if(entreprise.value===""){
-            entreprise_error.innerHTML="Enter  Nom de votre Entreprise"
+            entreprise_error.innerHTML="Entrez le nom de votre entreprise",
+            entreprise_error.style.paddingTop="10px";
+            entreprise_error.style.paddingLeft="5px";
             entreprise_error.style.color="red";
         btnS.style.display="none"
        

@@ -26,15 +26,19 @@ btnP.style.display="none"
     
 let index=0;
 button.forEach((btn)=>{
-
+numerique.innerHTML=index+1
 btn.addEventListener('click',(e)=>{
     e.preventDefault();
     
     let currentWidth = parseFloat(range.style.width) || 0;
     
+    console.log(index+1)
 if(btn.id === "Suivant"){
-   
+if(numerique<5){}
+    numerique.innerHTML=index+2
+    console.log(index+2)
     index++
+    
     btnP.style.display="block"
     if((index + 1)==2){
         if(prenom.value===""){
@@ -95,6 +99,7 @@ if(btn.id === "Suivant"){
     }
     
 index--
+numerique.innerHTML=index+1
 range.style.width = (currentWidth - 25) + "%"; 
 
 }
@@ -103,7 +108,7 @@ if (index > divE.length - 1) {
     index = 0;
     range.style.width = "25%";
     // Check if input fields are empty to disable the button
-   
+    numerique.innerHTML=index+1
 }
 if (divE.length ) {
     // Parcours chaque div et affiche leur longueur
@@ -134,14 +139,12 @@ divE[index].classList.toggle('active');
 
 
 })
-console.log(divE)
+// console.log(divE[index]);
 
 
 
 });
-function verifier() {
- 
-}
+
 
 function handele(){
 

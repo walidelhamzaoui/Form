@@ -42,8 +42,9 @@ if(numerique<5){}
     btnP.style.display="block"
     if((index + 1)==2){
         if(prenom.value===""){
-        prenom_error.innerHTML="Entrez votre prénom",
+        prenom_error.innerHTML="Entrez votre prénom"
         prenom_error.style.color="red";
+        btnS.style.display="none"
         prenom_error.style.paddingTop="10px";
         prenom_error.style.paddingLeft="5px";
         btnS.style.display="none"
@@ -55,10 +56,11 @@ if(numerique<5){}
             btnS.style.display="block"
         }
         if(nom.value===""){
-        nom_error.innerHTML="Entrez votre nom",
+        nom_error.innerHTML="Entrez votre nom"
+        nom_error.style.color="red";
+       
         nom_error.style.paddingTop="10px";
         nom_error.style.paddingLeft="5px";
-        nom_error.style.color="red";
         btnS.style.display="none"
        
         // console.log("oki");
@@ -66,24 +68,26 @@ if(numerique<5){}
         }
           
         if (email.value === "") {
-            email_error.innerHTML = "Entrez votre email",
+            email_error.innerHTML = "Entrez votre email";
+            email_error.style.color = "red";
             email_error.style.paddingTop="10px";
             email_error.style.paddingLeft="5px";
-            email_error.style.color = "red";
             btnS.style.display = "none";
         }
         if (Téléphone.value === ""  ) {
-            phone_error.innerHTML ="Entrez votre numéro de téléphone",
+            phone_error.innerHTML ="Entrez votre numéro de téléphone";
+            phone_error.style.color = "red";
+            
             phone_error.style.paddingTop="10px";
             phone_error.style.paddingLeft="5px";
-            phone_error.style.color = "red";
             btnS.style.display = "none";
         }
         if(entreprise.value===""){
-            entreprise_error.innerHTML="Entrez le nom de votre entreprise",
-            entreprise_error.style.paddingTop="10px";
-            entreprise_error.style.paddingLeft="5px";
+            entreprise_error.innerHTML=" Entrez le nom de votre entreprise"
             entreprise_error.style.color="red";
+             
+           entreprise_error.style.paddingTop="10px";
+           entreprise_error.style.paddingLeft="5px";
         btnS.style.display="none"
        
         // console.log("oki");
@@ -164,7 +168,7 @@ function handele(){
         email.value!==""&&
         email.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) &&
         Téléphone.value !== "" &&
-        Téléphone.value.match(/^\+212[5-9][0-9]{8}$/ ) &&
+        Téléphone.value.match(/^(?:\+212|0)([5-9]\d{8})$/) &&
         entreprise.value !== ""
     ) {
         prenom_error.innerHTML=""

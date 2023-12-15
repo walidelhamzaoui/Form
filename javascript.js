@@ -154,7 +154,7 @@ function handele(){
         email.value!==""&&
         email.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) &&
         Téléphone.value !== "" &&
-        Téléphone.value.match(/^0[5-9]{1}[0-9]{8}$/ ) &&
+        Téléphone.value.match(/^\+212[5-9][0-9]{8}$/ ) &&
         entreprise.value !== ""
     ) {
         prenom_error.innerHTML=""

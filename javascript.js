@@ -1,45 +1,45 @@
 let divE = document.querySelectorAll('form .page');
-
+/********Selection les Element****/////
 let button=document.querySelectorAll('button');
 let range=document.getElementById('range');
 let nom=document.getElementById('nom');
 let prenom=document.getElementById('prenom');
-let prenom_error=document.getElementById('prenom_error');
-let nom_error=document.getElementById('nom_error');
-let email_error=document.getElementById('email_error');
-let phone_error=document.getElementById('telephone_error');
-let entreprise_error=document.getElementById('entreprise_error');
 let email=document.getElementById('E-mail');
 let Téléphone=document.getElementById('Téléphone');
 let entreprise=document.getElementById('entreprise');
 let btnS=document.getElementById('Suivant');
 let btnP=document.getElementById('Précédent');
 let numerique=document.getElementById('numerique');
+/********Selection les errors****/////
+let prenom_error=document.getElementById('prenom_error');
+let nom_error=document.getElementById('nom_error');
+let email_error=document.getElementById('email_error');
+let phone_error=document.getElementById('telephone_error');
+let entreprise_error=document.getElementById('entreprise_error');
 
-// Parse the current width as a number
-
-           
+/*********** 'état initial d'un bouton "Précédent" */
 btnP.style.display="none"
    
-    // console.log("oki");
-    
-    
-let index=0;
+   
+let index=0;  
+/*********loop les button */
+
 button.forEach((btn)=>{
 numerique.innerHTML=index+1
 btn.addEventListener('click',(e)=>{
     e.preventDefault();
+
+ let currentWidth = parseFloat(range.style.width) || 0;
     
-    let currentWidth = parseFloat(range.style.width) || 0;
-    
-    console.log(index+1)
+   
 if(btn.id === "Suivant"){
-if(numerique<5){}
+/***************numeration ***** */
     numerique.innerHTML=index+2
-    console.log(index+2)
+  
     index++
     
     btnP.style.display="block"
+    /********************validation des input vide******************/
     if((index + 1)==2){
         if(prenom.value===""){
         prenom_error.innerHTML="Entrez votre prénom"
@@ -50,7 +50,7 @@ if(numerique<5){}
         btnS.style.display="none"
         btnP.style.display="block"
        
-        // console.log("oki");
+        
         
         }else{
             btnS.style.display="block"
@@ -63,7 +63,7 @@ if(numerique<5){}
         nom_error.style.paddingLeft="5px";
         btnS.style.display="none"
        
-        // console.log("oki");
+        
         
         }
           
@@ -90,7 +90,6 @@ if(numerique<5){}
            entreprise_error.style.paddingLeft="5px";
         btnS.style.display="none"
        
-        // console.log("oki");
         
         }
         
@@ -101,8 +100,9 @@ if(numerique<5){}
     range.style.width = (currentWidth + 25) + "%"; 
     
 }else{
+/************************retourner par button Précédent  */
     if((index+1)==3){
-    // btnS.style.display="none"
+   
   
     
     }else
@@ -117,11 +117,11 @@ numerique.innerHTML=index+1
 range.style.width = (currentWidth - 25) + "%"; 
 
 }
-
+/********************  veifirez form qui class range et leur longueur*/
 if (index > divE.length - 1) {
     index = 0;
     range.style.width = "25%";
-    // Check if input fields are empty to disable the button
+/************************numeration */
     numerique.innerHTML=index+1
 }
 if (divE.length ) {
@@ -130,6 +130,7 @@ if (divE.length ) {
         console.log("Longueur de la div " + (index + 1) + " : " + div.textContent.length);
        
     });
+    /*******************aprés le retour de index1 button disparait */
     if(index+1==1){
  btnP.style.display="none";
     }
@@ -139,27 +140,21 @@ if (index < 0) {
     index = divE.length - 1;
    
 }
-
+/**************loop les elements */
 divE.forEach((divelement)=>{
     divelement.classList.remove("active");
-    // ScrollReveal({
-    //     reset:true,ditance:'80px',duration:2000,delay:200
-        
-        
-    //     });
-    //     ScrollReveal().reveal('.page',{origin:'bottom'});
+ 
 })
 divE[index].classList.toggle('active');
 
 
 })
-// console.log(divE[index]);
 
 
 
 });
 
-
+/**************************validation des input not vide */
 function handele(){
 
     if (
